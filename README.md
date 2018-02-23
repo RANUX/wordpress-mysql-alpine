@@ -6,7 +6,7 @@ Open terminal or cmd and cd to wordpress-mysql-alpine folder. Run:
 ```
 docker-compose up
 ```
-Install any MySQL client, connect to `localhost`, create user and DB for wordpress.
+Install any MySQL client, connect to `localhost` (default port 3306), create user and DB for wordpress.
 
 Download WP from https://wordpress.org/download/ extract content to ./www/htdocs folder.
 
