@@ -1,0 +1,22 @@
+version: '3.3'
+
+services:
+  mysql:
+    container_name: mysql
+    image: inikolaev/alpine-mysql
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql-db/mysql:/var/lib/mysql
+
+  wordpress:
+    container_name: wordpress
+    environment:
+      - VIRTUAL_HOST=localhost
+    image: etopian/alpine-php-wordpress
+    links:
+      - mysql
+    volumes:
+      - ./www:/DATA
+    ports:
+      - "80:80"
